@@ -1,3 +1,7 @@
+lbss_my_angular_api:
+    resource: "@LBSSMyAngularApiBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

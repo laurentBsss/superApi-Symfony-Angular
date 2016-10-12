@@ -1,0 +1,3 @@
+lbss_my_angular_api_homepage:
+    path:     /
+    defaults: { _controller: LBSSMyAngularApiBundle:Default:index }
