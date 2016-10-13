@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new LBSS\MyAngularApiBundle\LBSSMyAngularApiBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+
 
 
         ];
