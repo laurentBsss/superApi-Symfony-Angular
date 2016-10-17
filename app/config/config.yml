@@ -71,3 +71,13 @@ swiftmailer:
 
 # nelmio api doc
 nelmio_api_doc: ~
+
+# add fos rest configuration
+fos_rest:
+    routing_loader:
+        include_format: false
+    view:
+        view_response_listener: true
+    format_listener:
+        rules:
+            - { path: '^/', priorities: ['json'], fallback_format: 'json' } 

@@ -1,3 +1,11 @@
 lbss_my_angular_api_homepage:
     path:     /
     defaults: { _controller: LBSSMyAngularApiBundle:Default:index }
+
+# lbss_my_angular_api_users:
+#     path:     /users
+#     defaults: { _controller: LBSSMyAngularApiBundle:Default:users }
+
+# lbss_my_angular_api_user:
+#     path:     /user/{id}
+#     defaults: { _controller: LBSSMyAngularApiBundle:Default:user }

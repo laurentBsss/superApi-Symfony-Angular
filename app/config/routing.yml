@@ -1,11 +1,19 @@
-lbss_my_angular_api:
-    resource: "@LBSSMyAngularApiBundle/Resources/config/routing.yml"
-    prefix:   /
+# lbss_my_angular_api:
+#     resource: "@LBSSMyAngularApiBundle/Resources/config/routing.yml"
+#     prefix:   /
 
 app:
-    resource: "@AppBundle/Controller/"
+    resource: "@AppBundle/Controller/DefaultController.php"
     type:     annotation
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+default:
+    type:     rest
+    resource: LBSS\MyAngularApiBundle\Controller\DefaultController
+
+users:
+    type:     rest
+    resource: LBSS\MyAngularApiBundle\Controller\UserController
