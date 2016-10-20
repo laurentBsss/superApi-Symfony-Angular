@@ -86,6 +86,61 @@ class UserController extends Controller
         }
 
     }
+    
+    /**
+     * @Rest\View()
+     * @Rest\Put("/user/{id}")
+     */
+    public function putUserAction(Request $request)
+    {
+        $user = $this->getDoctrine()->getRepository('LBSSMyAngularApiBundle:User')
+                ->find($request->get('id')); 
+       
+        if (empty($user)) {
+            return new JsonResponse(['message' => 'User not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $form = $this->createForm(UserType::class, $user);
+
+        $form->submit($request->request->all());
+
+        if ($form->isValid()) {
+            $em = $this->get('doctrine.orm.entity_manager');
+            
+            $em->flush();
+            return $user;
+        } else {
+            return $form;
+        }
+    }
+
+    /**
+     * @Rest\View()
+     * @Rest\Patch("/user/{id}")
+     */
+    public function patchPlaceAction(Request $request)
+    {
+        $user = $this->getDoctrine()->getRepository('LBSSMyAngularApiBundle:User')
+                ->find($request->get('id')); 
+
+        if (empty($user)) {
+            return \FOS\RestBundle\View\View::create(['message' => 'user not found !!!'], Response::HTTP_NOT_FOUND);
+        }
+
+        $form = $this->createForm(UserType::class, $user);
+
+         // Le paramètre false dit à Symfony de garder les valeurs dans notre 
+         // entité si l'utilisateur n'en fournit pas une dans sa requête
+        $form->submit($request->request->all(), false);
+
+        if ($form->isValid()) {
+            $em = $this->get('doctrine.orm.entity_manager');            
+            $em->flush();
+            return $user;
+        } else {
+            return $form;
+        }
+    }
 
 
 
