@@ -17,3 +17,7 @@ default:
 users:
     type:     rest
     resource: LBSS\MyAngularApiBundle\Controller\UserController
+
+tracking:
+    type:     rest
+    resource: LBSS\MyAngularApiBundle\Controller\TrackingController
