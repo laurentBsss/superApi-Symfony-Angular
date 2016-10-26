@@ -20,6 +20,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
         return $this->render('LBSSMyAngularApiBundle:Default:index.html.twig');
     }
 

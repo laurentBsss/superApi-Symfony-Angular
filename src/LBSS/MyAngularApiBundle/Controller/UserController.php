@@ -48,9 +48,6 @@ class UserController extends Controller
      */
     public function postUsersAction(Request $request)
     { 
-        /*$userName = "Da vinci";
-        $email = "blabla@gmail.com" ;*/
-
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
@@ -97,7 +94,7 @@ class UserController extends Controller
                 ->find($request->get('id')); 
        
         if (empty($user)) {
-            return new JsonResponse(['message' => 'User not found'], Response::HTTP_NOT_FOUND);
+            return \FOS\RestBundle\View\View::create(['message' => 'User not found'], Response::HTTP_NOT_FOUND);
         }
 
         $form = $this->createForm(UserType::class, $user);
@@ -141,8 +138,5 @@ class UserController extends Controller
             return $form;
         }
     }
-
-
-
    
 }
