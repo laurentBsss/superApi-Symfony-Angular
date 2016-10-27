@@ -15,10 +15,15 @@ use FOS\RestBundle\View\View;
 */
 use LBSS\MyAngularApiBundle\Form\UserType;
 
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class UserController extends Controller
 {
     /**
+     * @ApiDoc(
+     *    description="Récupère la liste des Users"
+     * )
+     *
      * @Rest\View()
      * @Rest\Get("/users")
      */  
