@@ -21,7 +21,17 @@ class UserController extends Controller
 {
     /**
      * @ApiDoc(
-     *    description="Récupère la liste des Users"
+     *    description="Récupère la liste des Users",
+     *    input={"class"=PlaceType::class, "name"=""},
+     *    statusCodes = {
+     *        201 = "Création avec succès",
+     *        400 = "Formulaire invalide"
+     *    },
+     *    responseMap={
+     *         201 = {"class"=Place::class},
+     *         400 = { "class"=PlaceType::class, "fos_rest_form_errors"=true, "name" = ""}
+     *    }
+
      * )
      *
      * @Rest\View()
@@ -36,6 +46,10 @@ class UserController extends Controller
     }
     
     /**
+     * @ApiDoc(
+     *    description="Récupère un User"
+     * )
+     *
      * @Rest\View()
      * @Rest\Get("/user/{id}")
      */
