@@ -21,3 +21,7 @@ users:
 tracking:
     type:     rest
     resource: LBSS\MyAngularApiBundle\Controller\TrackingController
+
+weather:
+    type:     rest
+    resource: LBSS\MyAngularApiBundle\Controller\WeatherController
