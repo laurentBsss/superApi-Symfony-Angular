@@ -21,8 +21,7 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new EightPoints\Bundle\GuzzleBundle\GuzzleBundle(),
-
-
+            new Nelmio\CorsBundle\NelmioCorsBundle(),
 
         ];
 
