@@ -88,8 +88,18 @@ fos_rest:
     serializer:
         serialize_null:  true
 
+# add JMS serializer configuration
 jms_serializer:
     handlers:
         datetime:
             default_format: "Y-m-d\\TH:i:sP"
             default_timezone: "UTC"
+
+# add nelmio CORS configuration
+nelmio_cors:
+    defaults:
+        allow_credentials: false
+        allow_origin: ['*']
+        allow_headers: ['*']
+        allow_methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+        max_age: 3600
