@@ -36,7 +36,7 @@ class WeatherController extends Controller
        
        $appID = '14e1516c61a756cc3081bb5bc13a572a';
        $client = new Client( ['verify' => false ,'headers' => ['Accept' => 'application/json']]);
-       $response = $client->get('http://api.openweathermap.org/data/2.5/weather?q='.$city.',fr&appid='. $appID);
+       $response = $client->get('http://api.openweathermap.org/data/2.5/weather?q='.$city.',fr&lang=fr&units=metric&appid='. $appID);
        $contents = $response->getBody()->getContents();
        $response = new Response($contents);
        $response->headers->set('Content-Type', 'application/json');
@@ -61,11 +61,10 @@ class WeatherController extends Controller
      * @Rest\Get("/weather/")
      */  
     public function getWeatherDefaultAction($city = 'paris')
-    {  /*var_dump($city);die;*/
-       
+    {  
        $appID = '14e1516c61a756cc3081bb5bc13a572a';
        $client = new Client( ['verify' => false ,'headers' => ['Accept' => 'application/json']]);
-       $response = $client->get('http://api.openweathermap.org/data/2.5/weather?q='.$city.',fr&appid='. $appID);
+       $response = $client->get('http://api.openweathermap.org/data/2.5/weather?q='.$city.',fr&lang=fr&units=metric&appid='. $appID);
        $contents = $response->getBody()->getContents();
        $response = new Response($contents);
        $response->headers->set('Content-Type', 'application/json');
