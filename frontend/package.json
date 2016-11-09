@@ -1,0 +1,20 @@
+{
+  "name": "frontend_api_angular",
+  "version": "1.0.0",
+  "description": "an angular projet who  interact with api data",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "laurentBsss"
+  },
+  "keywords": [
+    "angular",
+    "api",
+    "dev"
+  ],
+  "author": "laurentBsss",
+  "license": "ISC"
+}

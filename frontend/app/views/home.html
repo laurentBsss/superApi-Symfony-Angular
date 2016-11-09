@@ -1,0 +1,25 @@
+<form class="form-inline" ng-controller="SearchCtrl" >
+  <div class="form-group">
+    <label for="city">adresse meteo</label>
+    <input type="text" class="form-control" id="city" placeholder="entrez votre ville svp" ng-model="query">
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="search()">Send</button> 
+  <br>
+
+<p>{{ meteo.name }}</p>
+<p>{{ meteo.main.temp }} <span>{{meteo.main.temp ? '°C' : ''}}</span> </p>
+<img ng-src="http://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png"  />
+<p>{{ meteo.weather[0].description }}</p>
+</form>
+
+<p>hellooooooo</p>
+<!-- 
+<p>{{ tracking.status }}</p>
+<p>{{ tracking.type }}</p>
+<p>{{ tracking.date }}</p>
+<p>{{ tracking.code }}</p>
+<p>{{ tracking.message }}</p>
+<a href="{{ tracking.link }}">card data</a> <br>
+<iframe ng-src="{{ tracking.link }}" width="600" height="800" frameborder="0">
+    <p>Votre navigateur ne supporte pas l'élément iframe</p>
+</iframe > -->
